@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Síntesis Aditiva</title>
+  <link rel="stylesheet" href="aditiva.css" />
+  <link rel="stylesheet" href="../assets/styles/global.css" />
+</head>
+<body>
+  <header>
+    <h1>Síntesis Aditiva</h1>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../sustractiva/sustractiva.html">Síntesis Sustractiva</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="osciladores">
+      <h2>Control de Osciladores</h2>
+
+      <div class="osc">
+        <label>Oscilador 1:</label>
+        <select id="wave1">
+          <option value="sine">Seno</option>
+          <option value="square">Cuadrada</option>
+          <option value="sawtooth">Diente</option>
+          <option value="triangle">Triangular</option>
+        </select>
+        <input type="range" id="vol1" min="0" max="1" step="0.01" value="0.5">
+      </div>
+
+      <div class="osc">
+        <label>Oscilador 2:</label>
+        <select id="wave2">
+          <option value="sine">Seno</option>
+          <option value="square">Cuadrada</option>
+          <option value="sawtooth">Diente</option>
+          <option value="triangle">Triangular</option>
+        </select>
+        <input type="range" id="vol2" min="0" max="1" step="0.01" value="0.5">
+      </div>
+
+      <div class="osc">
+        <label>Oscilador 3:</label>
+        <select id="wave3">
+          <option value="sine">Seno</option>
+          <option value="square">Cuadrada</option>
+          <option value="sawtooth">Diente</option>
+          <option value="triangle">Triangular</option>
+        </select>
+        <input type="range" id="vol3" min="0" max="1" step="0.01" value="0.5">
+      </div>
+
+      <button id="play">Reproducir</button>
+      <button id="stop">Detener</button>
+
+      <canvas id="oscilloscope" width="600" height="200"></canvas>
+    </section>
+  </main>
+
+  <script src="aditiva.js"></script>
+</body>
+</html>

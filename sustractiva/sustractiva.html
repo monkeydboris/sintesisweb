@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Síntesis Sustractiva</title>
+  <link rel="stylesheet" href="sustractiva.css">
+</head>
+<body>
+  <header>
+    <h1>Síntesis Sustractiva</h1>
+    <nav>
+      <a href="../index.html">Volver al inicio</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="control-panel">
+      <label>Tipo de ruido:
+        <select id="noiseType">
+          <option value="white">Ruido Blanco</option>
+          <option value="pink">Ruido Rosa</option>
+        </select>
+      </label>
+
+      <label>Frecuencia de corte: <span id="freq-label">1000 Hz</span>
+        <input type="range" id="filterFreq" min="100" max="5000" value="1000">
+      </label>
+
+      <button id="playNoise">Escuchar Ruido Filtrado</button>
+    </section>
+
+    <section class="wave-preview">
+      <h2>Vista de onda (tipo osciloscopio)</h2>
+      <canvas id="oscilloscope" width="600" height="200"></canvas>
+    </section>
+  </main>
+
+  <script src="sustractiva.js"></script>
+</body>
+</html>
