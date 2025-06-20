@@ -45,6 +45,34 @@
   </footer>
 
   <script src="aditiva.js"></script>
+  <section id="piano-section">
+    <h2>Piano Interactivo</h2>
+  
+    <div class="controls">
+      <button id="octave-down">- Octava</button>
+      <span id="octave-label">Octava: 4</span>
+      <button id="octave-up">+ Octava</button>
+  
+      <label for="volume">Volumen:</label>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+    </div>
+  
+    <div class="piano">
+      <div class="key white" data-note="C"></div>
+      <div class="key black" data-note="C#"></div>
+      <div class="key white" data-note="D"></div>
+      <div class="key black" data-note="D#"></div>
+      <div class="key white" data-note="E"></div>
+      <div class="key white" data-note="F"></div>
+      <div class="key black" data-note="F#"></div>
+      <div class="key white" data-note="G"></div>
+      <div class="key black" data-note="G#"></div>
+      <div class="key white" data-note="A"></div>
+      <div class="key black" data-note="A#"></div>
+      <div class="key white" data-note="B"></div>
+    </div>
+  </section>
+  
 </body>
 <script>
 tsParticles.load("particles-js", {

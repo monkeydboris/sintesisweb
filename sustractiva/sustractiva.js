@@ -89,3 +89,9 @@ function draw() {
 document.getElementById('filterFreq').addEventListener('input', function () {
   document.getElementById('freq-label').textContent = `${this.value} Hz`;
 });
+const filterSlider = document.getElementById("filterFreq");
+const freqValue = document.getElementById("freqValue");
+
+filterSlider.addEventListener("input", () => {
+  freqValue.textContent = `${filterSlider.value} Hz`;
+});
