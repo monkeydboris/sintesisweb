@@ -2,39 +2,64 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Síntesis Sustractiva</title>
+  <link rel="stylesheet" href="../assets/styles/global.css">
   <link rel="stylesheet" href="sustractiva.css">
+
+  <!-- tsParticles CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Síntesis Sustractiva</h1>
-    <nav>
-      <a href="../index.html">Volver al inicio</a>
-    </nav>
-  </header>
+  <!-- Fondo de partículas -->
+  <div id="particles-js"></div>
 
-  <main>
-    <section class="control-panel">
-      <label>Tipo de ruido:
-        <select id="noiseType">
-          <option value="white">Ruido Blanco</option>
-          <option value="pink">Ruido Rosa</option>
-        </select>
-      </label>
+  <main class="main-sustractiva">
+    <h1>Generador de Ruido</h1>
 
-      <label>Frecuencia de corte: <span id="freq-label">1000 Hz</span>
-        <input type="range" id="filterFreq" min="100" max="5000" value="1000">
-      </label>
+    <div class="noise-card">
+      <label for="noiseType">Tipo de ruido:</label>
+      <select id="noiseType">
+        <option value="white">Blanco</option>
+        <option value="pink">Rosa</option>
+      </select>
 
-      <button id="playNoise">Escuchar Ruido Filtrado</button>
-    </section>
+      <div class="buttons">
+        <button id="startBtn">▶ Reproducir</button>
+        <button id="stopBtn">■ Detener</button>
+      </div>
+    </div>
 
-    <section class="wave-preview">
-      <h2>Vista de onda (tipo osciloscopio)</h2>
-      <canvas id="oscilloscope" width="600" height="200"></canvas>
-    </section>
+    <canvas id="visualizer"></canvas>
   </main>
 
+  <footer>
+    <p>&copy; 2025 Boris Nolivos | Ingeniería en Sonido y Acústica - UDLA</p>
+  </footer>
+
+  <!-- Tu script original -->
   <script src="sustractiva.js"></script>
+
+  <!-- Script de configuración de partículas -->
+  <script>
+  tsParticles.load("particles-js", {
+    background: { color: { value: "transparent" } },
+    fpsLimit: 60,
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: "#38bdf8" },
+      shape: { type: "circle" },
+      opacity: { value: 0.3, random: true },
+      size: { value: { min: 1, max: 3 } },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        outModes: { default: "bounce" }
+      }
+    },
+    detectRetina: true
+  });
+  </script>
 </body>
 </html>
